@@ -67,7 +67,7 @@ fn function_into_generic(mut function: ItemFn) -> TokenStream {
 }
 
 fn sig_into_generic(sig: &mut Signature) {
-    let input_span = sig.span().clone();
+    let input_span = sig.span();
     let mut index = 0;
     let mut new_generics: Vec<GenericParam> = vec![];
 
@@ -80,7 +80,7 @@ fn sig_into_generic(sig: &mut Signature) {
             };
 
             let param = format!("RewriteImplTrait{}", index);
-            let ident = Ident::new(&param, input_span.clone());
+            let ident = Ident::new(&param, input_span);
             index += 1;
 
             new_generics.push(GenericParam::Type(TypeParam {
