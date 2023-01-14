@@ -16,8 +16,7 @@ use syn::TraitItem;
 use syn::TypeParam;
 use syn::{parse_macro_input, spanned::Spanned, FnArg, Item, ItemFn, Type};
 
-/// Rewrites `impl Trait` as generics on methods, trait definitions, and trait implementations
-///
+/// Rewrites `impl Trait` into a method generic on functions, trait definitions, and trait implementations.
 #[proc_macro_attribute]
 pub fn into_generic(_attr: TokenStream, input: TokenStream) -> TokenStream {
     let item = parse_macro_input!(input as Item);
