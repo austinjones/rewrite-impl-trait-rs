@@ -1,0 +1,23 @@
+[package]
+name = "rewrite-impl-trait"
+version = "0.1.0"
+description = "Rewrites impl Trait as method generics"
+keywords = ["macros"]
+categories = ["rust-patterns"]
+authors = ["Austin Jones <implAustin@gmail.com>"]
+edition = "2021"
+homepage = "https://github.com/austinjones/rewrite-impl-trait-rs"
+repository = "https://github.com/austinjones/rewrite-impl-trait-rs"
+license = "MIT"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+proc-macro = true
+
+[dependencies]
+quote = "1.0"
+
+[dependencies.syn]
+version = "1.0"
+features = ["full"]
